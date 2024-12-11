@@ -31,7 +31,7 @@
             </div>
         </nav>
         <!-- context -->
-        <section class="bg-gradient-to-r from-indigo-500 p-20">
+        <section class="bg-gradient-to-r from-indigo-600 p-20">
             <div>
                 <h1 class="text-8xl font-medium">Welcome to a Car Rental Management</h1><br>
                 <h2 class="text-2xl">Manage your Rentals contracts easely</h2>
