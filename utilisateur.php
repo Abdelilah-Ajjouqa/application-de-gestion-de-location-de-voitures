@@ -173,6 +173,8 @@ $result = $conn->query("SELECT * FROM client");
                         <th>Nom</th>
                         <th>Adresse</th>
                         <th>N.Telephone</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
                     </tr>
                 </thead>
 
@@ -184,35 +186,36 @@ $result = $conn->query("SELECT * FROM client");
                         <td>{$row['name']}</td>
                         <td>{$row['address']}</td>
                         <td>{$row['phone']}</td>
-                    </tr>
-                    </tbody>";
+                        <td><button class='btn-edit'><i class='fa-solid fa-pen-to-square hover:text-green-600'></i></button></td>
+                        <td><button class='btn-delete'><i class='fa-solid fa-trash hover:text-red-600'></i></button></td>
+                        </tr>
+                        </tbody>";
                     }
                 ?>
             </table>
         </div>
 
         <form id="firstForm" action="./assests/clients.php" method="POST"
-        class=
-        "hidden w-[40%] p-8 flex flex-col gap-8 items-center absolute top-20 left-1/3 bg-gradient-to-br from-indigo-800 shadow-lg rounded">
-        <label for="name"></label>
-        <input id="name" type="text" placeholder="Enter Your Name" required name="name"
-        class="border border-black rounded pl-2 h-9 w-[65%] opacity-95">
+            class="hidden w-[40%] p-8 flex flex-col gap-8 items-center absolute top-20 left-1/3 bg-gradient-to-br from-indigo-800 shadow-lg rounded">
+            <label for="name"></label>
+            <input id="name" type="text" placeholder="Enter Your Name" required name="name"
+                class="border border-black rounded pl-2 h-9 w-[65%] opacity-95">
 
-        <label for="adress"></label>
-        <input type="text" placeholder="Enter Your Adress" required name="address"
-        class="border border-black rounded pl-2 h-9 w-[65%] opacity-95">
+            <label for="adress"></label>
+            <input type="text" placeholder="Enter Your Adress" required name="address"
+                class="border border-black rounded pl-2 h-9 w-[65%] opacity-95">
 
-        <label for="phone"></label>
-        <input type="number" placeholder="Enter Your Phone Number" required name="phone"
-        class="border border-black rounded pl-2 h-9 w-[65%] opacity-95">
+            <label for="phone"></label>
+            <input type="number" placeholder="Enter Your Phone Number" required name="phone"
+                class="border border-black rounded pl-2 h-9 w-[65%] opacity-95">
 
-        <div>            
-            <input onclick="saveFirstForm()" type="submit" value="Save"
-            class="cursor-pointer px-4 py-1 bg-indigo-400 shadow-md rounded hover:scale-110 hover:duration-500 hover:bg-green-900 hover:bg-opacity-85 hover:text-white">
-            
-            <input onclick="closeFirst()" type="button" value="Cancel"
-            class="cursor-pointer px-4 py-1 bg-indigo-400 shadow-md rounded hover:scale-110 hover:duration-500 hover:bg-green-900 hover:bg-opacity-85 hover:text-white">
-        </div>
+            <div>
+                <input onclick="saveFirstForm()" type="submit" value="Save"
+                    class="cursor-pointer px-4 py-1 bg-indigo-400 shadow-md rounded hover:scale-110 hover:duration-500 hover:bg-green-900 hover:bg-opacity-85 hover:text-white">
+
+                <input onclick="closeFirst()" type="button" value="Cancel"
+                    class="cursor-pointer px-4 py-1 bg-indigo-400 shadow-md rounded hover:scale-110 hover:duration-500 hover:bg-green-900 hover:bg-opacity-85 hover:text-white">
+            </div>
         </form>
     </section>
 </body>
