@@ -1,13 +1,3 @@
-//input data from the first form: 
-const name = document.getElementById("name");
-const adress = document.getElementById("adress");
-const phone = document.getElementById("phone");
-
-// input data from the seconde form :
-const marque = document.getElementById("marque");
-const modele = document.getElementById("modele");
-const date = document.getElementById("date");
-
 const secondFormBtn = document.querySelector("#secondForm");
 const firstFormBtn = document.querySelector("#firstForm");
 
@@ -32,4 +22,12 @@ function closeFirst(){
 
 function closeSconde(){
     secondFormBtn.classList.add("hidden");
+}
+
+
+//Cars page : 
+const carForm = document.getElementById("secondForm");
+
+function addCars(){
+    carForm.classList.remove("hidden");
 }
