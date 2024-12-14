@@ -1,6 +1,6 @@
 <?php
-require 'config-db.php';
-$result = $conn->query("SELECT * FROM cars");
+    require '../config-db.php';
+    $result = $conn->query("SELECT * FROM cars");
 ?>
 
 <!DOCTYPE html>
@@ -11,28 +11,28 @@ $result = $conn->query("SELECT * FROM cars");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <script src="./app.js" defer></script>
+    <link rel="stylesheet" href="../outils/style.css">
+    <script src="../outils/app.js" defer></script>
     <title>Voitures | Car Rental</title>
 </head>
 
 <body class="flex bg-gradient-to-r from-indigo-600">
 
 <!-- side-bare -->
-    <nav class="h-[100vh] w-[25%] bg-black bg-opacity-95">
+<nav class="h-[100vh] w-[25%] bg-black bg-opacity-95">
         <ul class="flex flex-col gap-4 py-10 px-5 text-white">
-            <a href="./main.php"
+            <a href="../main.php"
                 class="p-2 border-b border-gray-500 hover:bg-slate-400 hover:scale-110 hover:duration-500">Page
                 d'Accueille</li></a>
-            <a href="./utilisateur.php">
+            <a href="../client/utilisateur.php">
                 <li class="p-2 border-b border-gray-500 hover:bg-slate-400 hover:scale-110 hover:duration-500">
                     Utilisateurs</li>
             </a>
-            <a href="#">
+            <a href="../contrat/contrat.php">
                 <li class="p-2 border-b border-gray-500 hover:bg-slate-400 hover:scale-110 hover:duration-500">Contrat
                 </li>
             </a>
-            <a href="./voitures.php">
+            <a href="../car/voitures.php">
                 <li class="p-2 border-b border-gray-500 hover:bg-slate-400 hover:scale-110 hover:duration-500">Voitures
                 </li>
             </a>
@@ -50,6 +50,7 @@ $result = $conn->query("SELECT * FROM cars");
             </ul>
         </div>
     </nav>
+
 
 <!-- main page -->
     <section class="flex flex-col gap-5 items-center w-full">
@@ -90,7 +91,7 @@ $result = $conn->query("SELECT * FROM cars");
             </table>
         </div>
 
-        <form id="carForm" action="./assests/cars.php" method="POST"
+        <form id="carForm" action="./cars.php" method="POST"
             class="hidden w-[40%] p-8 flex flex-col gap-8 items-center absolute top-20 left-1/3 bg-gradient-to-br from-indigo-800 shadow-lg rounded">
 
             <label for="marque"></label>
@@ -109,7 +110,7 @@ $result = $conn->query("SELECT * FROM cars");
                 <input type="submit" value="Save"
                     class="cursor-pointer px-4 py-1 bg-indigo-400 shadow-md rounded hover:scale-110 hover:duration-500 hover:bg-green-900 hover:bg-opacity-85 hover:text-white">
 
-                <input onclick="closeFirst()" type="button" value="Cancel"
+                <input onclick="closeForm()" type="button" value="Cancel"
                     class="cursor-pointer px-4 py-1 bg-indigo-400 shadow-md rounded hover:scale-110 hover:duration-500 hover:bg-green-900 hover:bg-opacity-85 hover:text-white">
             </div>
         </form>

@@ -1,6 +1,6 @@
 <?php
-require 'config-db.php';
-$result = $conn->query("SELECT * FROM client");
+    require '../config-db.php';
+    $result = $conn->query("SELECT * FROM client");
 ?>
 
 <!DOCTYPE html>
@@ -11,10 +11,8 @@ $result = $conn->query("SELECT * FROM client");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-    <script src="./app.js" defer></script>
+    <link rel="stylesheet" href="../outils/style.css">
+    <script src="../outils/app.js" defer></script>
     <title>Utilisateurs | Car Rental</title>
 </head>
 
@@ -22,18 +20,18 @@ $result = $conn->query("SELECT * FROM client");
     <!-- side-bare -->
     <nav class="h-[100vh] w-[25%] bg-black bg-opacity-95">
         <ul class="flex flex-col gap-4 py-10 px-5 text-white">
-            <a href="./main.php"
+            <a href="../main.php"
                 class="p-2 border-b border-gray-500 hover:bg-slate-400 hover:scale-110 hover:duration-500">Page
                 d'Accueille</li></a>
-            <a href="./utilisateur.php">
+            <a href="../client/utilisateur.php">
                 <li class="p-2 border-b border-gray-500 hover:bg-slate-400 hover:scale-110 hover:duration-500">
                     Utilisateurs</li>
             </a>
-            <a href="#">
+            <a href="../contrat/contrat.php">
                 <li class="p-2 border-b border-gray-500 hover:bg-slate-400 hover:scale-110 hover:duration-500">Contrat
                 </li>
             </a>
-            <a href="./voitures.php">
+            <a href="../car/voitures.php">
                 <li class="p-2 border-b border-gray-500 hover:bg-slate-400 hover:scale-110 hover:duration-500">Voitures
                 </li>
             </a>
@@ -91,7 +89,7 @@ $result = $conn->query("SELECT * FROM client");
             </table>
         </div>
 
-        <form id="firstForm" action="./assests/clients.php" method="POST"
+        <form id="clientForm" action="./clients.php" method="POST"
             class="hidden w-[40%] p-8 flex flex-col gap-8 items-center absolute top-20 left-1/3 bg-gradient-to-br from-indigo-800 shadow-lg rounded">
             <label for="name"></label>
             <input id="name" type="text" placeholder="Enter Your Name" required name="name"
@@ -109,7 +107,7 @@ $result = $conn->query("SELECT * FROM client");
                 <input type="submit" value="Save"
                     class="cursor-pointer px-4 py-1 bg-indigo-400 shadow-md rounded hover:scale-110 hover:duration-500 hover:bg-green-900 hover:bg-opacity-85 hover:text-white">
 
-                <input onclick="closeFirst()" type="button" value="Cancel"
+                <input onclick="closeForm()" type="button" value="Cancel"
                     class="cursor-pointer px-4 py-1 bg-indigo-400 shadow-md rounded hover:scale-110 hover:duration-500 hover:bg-green-900 hover:bg-opacity-85 hover:text-white">
             </div>
         </form>

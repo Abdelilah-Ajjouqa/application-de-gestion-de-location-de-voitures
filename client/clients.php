@@ -1,6 +1,6 @@
 <?php
-require '../config-db.php';
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    require '../config-db.php';
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['name']) && isset($_POST['address']) && isset($_POST['phone'])) {
 
         $name = $_POST['name'];
@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         } else {
             echo "Error: " . $conn->connect_error;
         }
-        header("Location: ../utilisateur.php");
+        header("Location: ./utilisateur.php");
         exit();
     }
 }
