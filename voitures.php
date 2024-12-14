@@ -68,6 +68,8 @@ $result = $conn->query("SELECT * FROM cars");
                         <th>Marque</th>
                         <th>Model</th>
                         <th>Year</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
                     </tr>
                 </thead>
 
@@ -75,7 +77,7 @@ $result = $conn->query("SELECT * FROM cars");
                 while ($row = $result->fetch_assoc()) {
                     echo "<tbody>
                     <tr>
-                        <th scope='row'>{$row['carsId']}</th>
+                        <th scope='row'>{$row['carId']}</th>
                         <td>{$row['marque']}</td>
                         <td>{$row['model']}</td>
                         <td>{$row['year']}</td>
@@ -88,7 +90,7 @@ $result = $conn->query("SELECT * FROM cars");
             </table>
         </div>
 
-        <form id="secondForm" action="./assests/cars.php" method="POST"
+        <form id="carForm" action="./assests/cars.php" method="POST"
             class="hidden w-[40%] p-8 flex flex-col gap-8 items-center absolute top-20 left-1/3 bg-gradient-to-br from-indigo-800 shadow-lg rounded">
 
             <label for="marque"></label>

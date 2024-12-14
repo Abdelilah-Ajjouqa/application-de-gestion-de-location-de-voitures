@@ -57,7 +57,7 @@ $result = $conn->query("SELECT * FROM client");
         <div class="my-3">
             <button onclick="addClient()"
                 class="bg-violet-950 px-6 py-1 text-white text-xl rounded shadow-lg shadow-violet-600 hover:scale-110 hover:duration-500 hover:bg-green-900 hover:bg-opacity-85">
-                Add New Car
+                Add New Client
             </button>
         </div>
 

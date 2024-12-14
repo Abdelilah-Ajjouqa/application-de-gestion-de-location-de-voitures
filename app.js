@@ -26,8 +26,12 @@ function closeSconde(){
 
 
 //Cars page : 
-const carForm = document.getElementById("secondForm");
+const carForm = document.getElementById("carForm");
 
 function addCars(){
     carForm.classList.remove("hidden");
+}
+
+function closeFirst(){
+    carForm.classList.add("hidden")
 }
