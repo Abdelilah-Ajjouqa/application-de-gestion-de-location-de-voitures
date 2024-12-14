@@ -1,5 +1,8 @@
 <?php
     require '../config-db.php';
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }    
     $result = $conn->query("SELECT * FROM cars");
 ?>
 
@@ -17,7 +20,6 @@
 </head>
 
 <body class="flex bg-gradient-to-r from-indigo-600">
-
 <!-- side-bare -->
 <nav class="h-[100vh] w-[25%] bg-black bg-opacity-95">
         <ul class="flex flex-col gap-4 py-10 px-5 text-white">
@@ -83,7 +85,14 @@
                         <td>{$row['model']}</td>
                         <td>{$row['year']}</td>
                         <td><button class='btn-edit'><i class='fa-solid fa-pen-to-square hover:text-green-600'></i></button></td>
-                        <td><button class='btn-delete'><i class='fa-solid fa-trash hover:text-red-600'></i></button></td>
+                        <td>
+                            <form action='./removeCar.php' method='POST' style='display: inline;'>
+                                <input type='hidden' name='carId' value='{$row['carId']}'>
+                                <button type='submit'>
+                                    <i class='fa-solid fa-trash hover:text-red-600'></i>
+                                </button>
+                            </form>
+                        </td>
                         </tr>
                         </tbody>";
                     }
@@ -91,7 +100,7 @@
             </table>
         </div>
 
-        <form id="carForm" action="./cars.php" method="POST"
+        <form id="carForm" action="cars.php" method="POST"
             class="hidden w-[40%] p-8 flex flex-col gap-8 items-center absolute top-20 left-1/3 bg-gradient-to-br from-indigo-800 shadow-lg rounded">
 
             <label for="marque"></label>

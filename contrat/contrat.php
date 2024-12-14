@@ -94,7 +94,7 @@ $cars = $conn->query("SELECT * FROM cars");
             </table>
         </div>
 
-        <form id="contratForm" action="./contrats.php" method="POST"
+        <form id="contratForm" action="contrats.php" method="POST"
             class="hidden w-[40%] p-8 flex flex-col gap-8 items-center absolute top-20 left-1/3 bg-gradient-to-br from-indigo-800 shadow-lg rounded">
             <label for="startDate" class="text-xl text-white self-start pl-3">Start-Date:</label>
             <input id="startDate" type="date" required name="startDate" min="2024-12-14"
@@ -130,6 +130,7 @@ $cars = $conn->query("SELECT * FROM cars");
                     class="cursor-pointer px-4 py-1 bg-indigo-400 shadow-md rounded hover:scale-110 hover:duration-500 hover:bg-green-900 hover:bg-opacity-85 hover:text-white">
             </div>
         </form>
+
     </section>
 </body>
 

@@ -81,7 +81,14 @@
                         <td>{$row['address']}</td>
                         <td>{$row['phone']}</td>
                         <td><button class='btn-edit'><i class='fa-solid fa-pen-to-square hover:text-green-600'></i></button></td>
-                        <td><button class='btn-delete'><i class='fa-solid fa-trash hover:text-red-600'></i></button></td>
+                        <td>
+                            <form action='./removeClient.php' method='POST' style='display: inline;'>
+                                <input type='hidden' name='clientId' value='{$row['clientId']}'>
+                                <button type='submit' >
+                                    <i class='fa-solid fa-trash hover:text-red-600'></i>
+                                </button>
+                            </form>
+                        </td>
                         </tr>
                         </tbody>";
                     }

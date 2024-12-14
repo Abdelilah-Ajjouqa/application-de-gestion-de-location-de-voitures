@@ -9,6 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $sql = "INSERT INTO contrat (startDate, endDate, duration) VALUES ('$startDate', '$endDate', '$duration')";
 
         if ($conn->query($sql)) {
+            // Insertion successful
         } else {
             echo "Error: " . $conn->connect_error;
         }

@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         } else {
             echo "Error: " . $conn->connect_error;
         }
-        header("Location: ../voitures.php");
+        header("Location: voitures.php");
         exit();
     }
 }
